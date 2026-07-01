@@ -21,8 +21,9 @@ driver.find_element(By.ID,"currentAddress").send_keys("Calle1")
 time.sleep(t)
 driver.find_element(By.ID, "permanentAddress").send_keys("Calle2")
 time.sleep(t)
-driver.execute_script("window.scrollTo(0,300)")
-driver.find_element(By.ID, "submit").click()
+submit = driver.find_element(By.ID, "submit")
+ir = driver.execute_script("arguments[0].scrollIntoView();", submit)
+submit.click()
 time.sleep(t)
 
 
